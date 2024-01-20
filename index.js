@@ -9,5 +9,6 @@ const inputBtn = document.getElementById("input-btn")
 //let inputBtn = document.getElementById("input-btn");
 
 inputBtn.addEventListener("click", function(){
-    console.log("save")
+    myLeads.push(inputEl.value)
+    console.log(myLeads)
 })
