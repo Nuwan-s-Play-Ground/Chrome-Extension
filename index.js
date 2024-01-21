@@ -17,11 +17,14 @@ const tabs = [
 ]
 
 tabBtn.addEventListener("click", function(){
-    // Save the url instead of logging it out
-    console.log(tabs[0].url)
+    // Grab the URL of the current tab!
+    myLeads.push(tabs[0].url)
+    localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+    render(myLeads)
+    
 })
 
-function renderLeads() {
+function renderLeads(myLeads) {
     let listItems = ""
     for (let i = 0; i < myLeads.length; i++) {
         listItems += `
@@ -38,7 +41,7 @@ function renderLeads() {
 deleteBtn.addEventListener("dblclick", function() {
     localStorage.clear()
     myLeads = []
-    renderLeads()
+    renderLeads(myLeads)
 })
 
 inputBtn.addEventListener("click", function(){
